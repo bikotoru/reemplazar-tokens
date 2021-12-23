@@ -10,6 +10,8 @@ outputs:
   time: # id of output
     description: 'The time we greeted you'
 runs:
+  run: |
+    echo hola
   using: 'docker'
   image: 'Dockerfile'
   args:
