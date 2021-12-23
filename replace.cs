@@ -7,13 +7,12 @@ using System.Linq;
 
 
 
+
 String jsonSecretos = System.Environment.GetEnvironmentVariable("json");
 String prefijo = System.Environment.GetEnvironmentVariable("prefijo");
 String sufijo = System.Environment.GetEnvironmentVariable("sufijo");
 String ruta = System.Environment.GetEnvironmentVariable("path");
-String validarTodos = System.Environment.GetEnvironmentVariable("path");
 
-bool validarTodoBool = validarTodos.ToLower().Equals("true");
 
 ReplaceTokens(jsonSecretos,
    prefijo, sufijo, ruta);
@@ -62,7 +61,7 @@ static void ReplaceTokens(string jsonSecretos, string prefijo, string sufijo, st
     }
     catch (Exception e)
     {
-        errorWriter.WriteLine("ERROR: {0}", e.Message);
+        errorWriter.WriteLine("ERROR: {0}", e.Message +  "->" +jsonSecretos);
         Environment.Exit(1);
     }
 
